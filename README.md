@@ -1,11 +1,12 @@
-# Next.jsの環境構築
-
 なぜNext.jsなのか
-Gatsbyを利用すると色々便利なライブラリはあるが、そのおかげでライブラリの使い方をいちいち調べに行ったりで結構大変になる。
-Next.jsは自分で構築していく感じがしてすごくわかりやすい。
+Gatsbyを利用すると色々便利なライブラリはあるが、そのおかげでライブラリの使い方をいちいち調べに行ったりで結構大変になる。(自分だけかも)
+Next.jsは自分で構築していく感じがすごく必要最小限でわかりやすい。
 
-例えるならGatsbyはRuby on RailsでNext.jsはExpressみたいな。
-すごく必要最小限でわかりやすい。
+Githubにソースコード置いておきました。
+コード: https://github.com/usu-blog/nextjs-init
+
+また公式の勉強できる環境が揃っているのでぜひ使ってください。
+参考: https://nextjs.org/learn/
 
 ## 環境
 
@@ -41,7 +42,7 @@ Next.jsは自分で構築していく感じがしてすごくわかりやすい�
 ```
 
 ## How to use
-1. インストール
+### 1. インストール
 
 ```bash
 yarn
@@ -49,23 +50,38 @@ yarn
 yarn add react react-dom next
 ```
 
-2. ビルド
+### 2. ビルド
 
 ```bash
 yarn build
 ```
 
-3. 通常起動
+### 3. 静的にビルド
+
+```bash
+yarn export
+```
+
+`export`に成功するとルートディレクトリに`out`というディレクトリが生成されます。
+これが静的なサイトです。
+
+```
+yarn global add serve
+cd out
+serve -p 8080
+```
+ブラウザで`http://localhost:8080/`で確認できます。
+![スクリーンショット 2019-05-24 15.21.58.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/415529/5634f8f2-f4dd-25be-ec46-74036a153e57.png)
+
+
+### 通常起動
+通常に起動する場合なので、静的サイトにビルドしたい場合はいらない。
 
 ```bash
 yarn start
 ```
 
-4. 静的にビルド
 
-```bash
-yarn export
-```
 
 ## 静的サイトのビルドに必要なもの
 
